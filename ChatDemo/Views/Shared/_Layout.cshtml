@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    
+   
+
+</head>
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <ul class="nav nav-pills float-right">
+                    @if (ViewBag.SelectedTab == "Chat")
+                    {
+                        <li class="nav-item">
+                                <a class="nav-link active" href="/chat/index">Let's Chat <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home/contact">Contact</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/chat/index">Let's Chat <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/home/contact">Contact</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+            <h3 class="text-muted">Let's Chat</h3>
+        </div>
+
+        @RenderBody()
+
+        <footer class="footer">
+            <p>&copy; Company 2017</p>
+        </footer>
+
+    </div> <!-- /container -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->      
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+    <script src="/signalr/hubs" type="text/javascript"></script>
+    <script src="~/Scripts/site.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "About";
+    ViewBag.SelectedTab = "Chat";
+}
+
+<style>
+    .rcorners {
+        border-radius: 10px;
+        border: 1px medium #000000;
+        padding: 20px;
+        padding-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background-color: white;
+        text-align: left;
+    }
+</style>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="userName" placeholder="Enter username to Chat" />
+
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-success" href="#" id="btnConnect" role="button">Connect</a>
+        </div>
+    </div>
+   
+   
+
+    <div class="row" style="padding-top:10px;padding-bottom:20px;">
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="message" placeholder="Type in your message" />
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-success" href="#" id="btnSendMessage" role="button">Send</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 rcorners" id="chatMsg">
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            chatter.initilize();
+        });
+    </script>
+}
+
